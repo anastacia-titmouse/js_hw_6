@@ -72,7 +72,63 @@ console.log(binary.join('1'));
 
 //Advanced
 //Task 1
+//Variant 1
+function palindrome(str) {
+    return str.split('').reverse().join('') == str;
+}
+console.log(palindrome( '49094'));
+console.log(palindrome('А роза упала на лапу Азора'));//почему не работает с предложением?
 
+//Variant 2
+function palindromeChecker(str) {
+    str = str.toLowerCase().replace(/[^а-яa-z1-9]/gi, '');// что за стремная штука?
+    const lastIndex = str.length - 1;
+    for (let i = 0; i < str.length / 2; i++) {
+        if (str[i] !== str[lastIndex - i]) {
+            return false;
+        }
+    }
+    return true;
+}
+console.log(palindromeChecker('А роза упала на лапу Азора'));
+//Task 2
+//> Выведите в консоль среднее значение чисел в многомерном массиве.
+
+const matrix = [
+    [12, 98, 78, 65, 23],
+    [54, 76, 98, 43, 65],
+    [13, 324, 65, 312],
+    [9092, 22, 45, 90000],
+]
+for(let i = 0; i < matrix.length; i++) {
+    let avr = 0;
+    for(let k=0; k < matrix[i].length; k++) {
+        /* складываем все элементы вложенного массива по очереди, 
+        сохраняя в переменную и делим на длину каждого массива*/
+        avr += (matrix[i][k])/matrix[i].length;
+    }
+    console.log(avr);
+}
+
+//Task 3
+// Создайте два массива, в один поместите все положительные числа включая 0, 
+// в другой все отрицательные. Оба массива затем выведите в консоль.
+
+const mixedNumbers = [-14, 24, -89, 43, 0 , -1, 412, 4];
+const positiveNumbers = [];
+const negativeNumbers =[];
+for (let numb of mixedNumbers) {
+    if (numb < 0){
+        negativeNumbers.push(numb);
+    }
+    else if (numb >= 0){
+        positiveNumbers.push(numb);
+    }
+}
+console.log(positiveNumbers);
+console.log(negativeNumbers);
+
+//Task 4
 
 
 
