@@ -1,5 +1,5 @@
 // Task 1 🖥
-
+/
 // Дан массив:
 // Выведите в консоль его длину.
 
@@ -34,7 +34,7 @@ console.log(numbers);
 // + Полученный результат не забудьте вывести в консоль.
 
 const students = ['Polina', 'Dasha', 'Masha'];
-students.splice([students.length - 1], 1, 'Borya');
+students.splice(students.length - 1, 1, 'Borya');
 console.log(students);
 students.splice(0, 1, 'Andrey');
 console.log(students);
